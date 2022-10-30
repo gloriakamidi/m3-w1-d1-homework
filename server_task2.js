@@ -13,13 +13,10 @@ var server = http.createServer((req, res) =>{
     if (req.method === 'GET') {
         var fileUrl = req.url;
         if(fileUrl === '/') {
-            fileUrl = '/index.html';
-            fileUrl = '/about.html';
-            fileUrl = '/contact.html';
-          
-        }
-
-    var filePath = path.resolve('./' + fileUrl);
+            fileUrl = '/index.html', '/about.html', '/contact.html'  ; 
+        }  // NOTE:I am not sure where to add /about.html /contact.html
+        
+        var filePath = path.resolve('./' + fileUrl);
         var fileExt = path.extname(filePath);
 
         if(fileExt === '.html') {
